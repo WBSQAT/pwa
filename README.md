@@ -1,3 +1,2 @@
-# taller-pwa
-
-Repositorio para PWA generada en el Taller de QAT de WBS
+-Para correr de forma local (localhost:8080) el proyecto instalar: npm install --global http-server (Doc: https://www.npmjs.com/package/http-server)
+-Comando para iniciar proyecto: http-server -o
