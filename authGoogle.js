@@ -37,7 +37,6 @@
                 console.log(response.result);
                 console.log('Redireccionando a: formDataUser.html');
         
-                // swal("Bienvenido!", response.result.names[0].displayName, "success");
                 Swal.fire({
                     title: 'Bienvenido!',
                     text: response.result.names[0].displayName,
@@ -48,7 +47,15 @@
                   });
 
               },
-              function(err) { console.error("Execute error", err); });
+              function(err) { 
+                console.error("Execute error", err);
+                Swal.fire({
+                  title: 'Error',
+                  text: 'No autorizado',
+                  icon: 'error',
+                  confirmButtonText: 'OK'
+                });
+             });
   }
   gapi.load("client:auth2", function() {
     gapi.auth2.init({client_id: "791551942698-8g31qv76mpfkm3ifce2qu0jb20ghr834.apps.googleusercontent.com"});

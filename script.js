@@ -1,3 +1,11 @@
+// import IMask from './node_modules/imask';
+
+// var element = document.getElementById('phone');
+// var maskOptions = {
+//   mask: '+{54}(011)0000-0000'
+// };
+// var mask = IMask(element, maskOptions);
+
 // Render Google Sign-in button
 function renderButton() {
     gapi.signin2.render('gSignIn', {

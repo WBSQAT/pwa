@@ -1,0 +1,17 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "-Para correr de forma local (localhost:8080) el proyecto instalar: npm install --global http-server (Doc: https://www.npmjs.com/package/http-server)\r -Comando para iniciar proyecto: http-server -o",
+  "main": "index.html",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "imask": "^6.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
