@@ -1,12 +1,12 @@
 
-  function authenticate() {
+  export function authenticate() {
     return gapi.auth2.getAuthInstance()
         .signIn({scope: "https://www.googleapis.com/auth/user.birthday.read https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/user.phonenumbers.read"})
         .then(function() { console.log("Sign-in successful"); },
               function(err) { console.error("Error signing in", err); });
   }
-  function loadClient() {
-    gapi.client.setApiKey("AIzaSyCI7dtel6JRXCWKBdXNEuxkStEr8EYaO6k");
+  export function loadClient(apiKey) {
+    gapi.client.setApiKey(apiKey);
     return gapi.client.load("https://people.googleapis.com/$discovery/rest?version=v1")
         .then(function() { 
             console.log("GAPI client loaded for APIs"); 
@@ -57,7 +57,9 @@
                 });
              });
   }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "791551942698-8g31qv76mpfkm3ifce2qu0jb20ghr834.apps.googleusercontent.com"});
-  });
 
+  export default function initializeGoogle(client_id) {
+    gapi.load("client:auth2", function() {
+      gapi.auth2.init({client_id});
+    });
+  }
