@@ -1,0 +1,1 @@
+(()=>{"use strict";window.fbAsyncInit=function(){FB.init({appId:"2605083403115042",cookie:!0,xfbml:!0,version:"v9.0"})},gapi.load("client:auth2",(function(){gapi.auth2.init({client_id:"791551942698-8g31qv76mpfkm3ifce2qu0jb20ghr834.apps.googleusercontent.com"})}))})();
