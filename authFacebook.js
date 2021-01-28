@@ -1,7 +1,8 @@
 export function login(onLogin, onError) {
-  return FB.login((response) => {
+  return FB.login((response) => { //Redireccion al login de Facebook
       if (response.authResponse) {
-        FB.api('/me', (response) => onLogin ? onLogin(response) : null);
+        //Se obtiene informacion del usuario
+        FB.api('/me', (response) => onLogin ? onLogin(response) : null); 
       } else {
         if (onError)
           onError(response);

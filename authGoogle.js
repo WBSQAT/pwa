@@ -1,4 +1,5 @@
   export function login(onLogin, onError) {
+    //SDK https://github.com/google/google-api-javascript-client
     return gapi.auth2.getAuthInstance()
         .signIn({scope: "https://www.googleapis.com/auth/user.birthday.read https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/user.phonenumbers.read"})
         .then(gapi.client.load("https://people.googleapis.com/$discovery/rest?version=v1"))
@@ -22,8 +23,9 @@
   }
   
   export default function initializeGoogle(client_id, apiKey) {
+    //https://developers.facebook.com/apps/
     gapi.load("client:auth2", () => {
-      gapi.auth2.init({client_id})
-      .then(() => gapi.client.setApiKey(apiKey));
+      gapi.auth2.init({client_id}) //"Identificador de la app"
+      .then(() => gapi.client.setApiKey(apiKey)); //"Clave secreta de la app"
     });
   }
