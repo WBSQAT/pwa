@@ -52,7 +52,7 @@
     />
     <script src="https://apis.google.com/js/api.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="../dist/bundle.js"></script>
+    <script src="bundle.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="manifest" href="manifest.json" />
@@ -108,11 +108,10 @@
               <span
                 id="gAuth"
                 type="button"
-                onclick="authenticate().then(loadClient)"
                 ><i class="fab fa-google-plus-square"></i
               ></span>
               <!-- Facebook Auth -->
-              <span id="fAuth" onclick="login();"
+              <span id="fAuth"
                 ><i class="fab fa-facebook-square"></i
               ></span>
               <!-- Twitter Auth -->
