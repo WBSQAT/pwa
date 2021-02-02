@@ -8,6 +8,7 @@
 
 import initializeFacebook, { login as loginFB } from './authFacebook.js';
 import initializeGoogle, { login as LoginG } from './authGoogle.js';
+import './formDataUser.js';
 
 const fauth = document.getElementById('fAuth');
 const gauth = document.getElementById('gAuth');
@@ -26,14 +27,17 @@ addHoverEffect(tauth);
 if (fauth) {
     initializeFacebook('2605083403115042');
     fauth.onclick = () => loginFB(
-        (response) => {
+        (user) => {
             Swal.fire({
                 title: 'Bienvenido!',
-                text: response.name,
+                text: user.name,
                 icon: 'success',
                 confirmButtonText: 'OK'
                 })
-                .then(() => window.location = "http://localhost:8080/formDataUser.html");
+                .then(() => {
+                    window.location = Object.entries(user)
+                        .reduce((acum, [ key, value ]) => `${acum}&${key}=${value}`, "http://localhost:8080/formDataUser.html?")
+                });
         },
         (err) =>  Swal.fire({
             title: 'Error',
@@ -47,14 +51,17 @@ if (fauth) {
 if (gauth) {
     initializeGoogle("791551942698-8g31qv76mpfkm3ifce2qu0jb20ghr834.apps.googleusercontent.com", "AIzaSyCI7dtel6JRXCWKBdXNEuxkStEr8EYaO6k");
     gauth.onclick = () => LoginG(
-        (response) => {
+        (user) => {
             Swal.fire({
                 title: 'Bienvenido!',
-                text: response.result.names[0].displayName,
+                text: `${user.name} ${user.surname}`,
                 icon: 'success',
                 confirmButtonText: 'OK'
                 })
-                .then(() => window.location = "http://localhost:8080/formDataUser.html");
+                .then(() => {
+                    window.location = Object.entries(user)
+                        .reduce((acum, [ key, value ]) => `${acum}&${key}=${value}`, "http://localhost:8080/formDataUser.html?")
+            });
         },
         (err) =>  Swal.fire({
             title: 'Error',
