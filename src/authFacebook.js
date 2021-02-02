@@ -2,12 +2,17 @@ export function login(onLogin, onError) {
   return FB.login((response) => { //Redireccion al login de Facebook
       if (response.authResponse) {
         //Se obtiene informacion del usuario
-        FB.api('/me', (response) => onLogin ? onLogin(response) : null); 
+        FB.api('/me//?fields=last_name,first_name,email,birthday', (responseMe) => onLogin ? onLogin({
+          name: responseMe.first_name,
+          surname: responseMe.last_name,
+          email: responseMe.email,
+          birthday: new Date(responseMe.birthday).toLocaleDateString("es-ES", { year: 'numeric', month: 'numeric', day: 'numeric' }),
+        }) : null); 
       } else {
         if (onError)
           onError(response);
       }
-  });
+  }, {scope: 'public_profile,email'});
 }
 
 export default function initializeFacebook(appId) {

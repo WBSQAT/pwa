@@ -1,20 +1,20 @@
 
 import IMask from 'imask';
 
-var birthdate;
+var birthday;
 var admissionDate;
-const phoneInput = document.getElementById('phone-mask');
+const phoneInput = document.getElementById('phone');
 
 if (phoneInput){
     var phoneMask = IMask(
-        document.getElementById('phone-mask'), {
+        document.getElementById('phone'), {
         mask: '+{54} (011) 0000-0000'
         });
     
     var momentFormat = moment.localeData(navigator.language).longDateFormat('L'); 
     
-    birthdate = IMask(
-        document.getElementById('birthdate-mask'),
+    birthday = IMask(
+        document.getElementById('birthday'),
         {
             mask: Date,
             pattern: momentFormat,
@@ -85,7 +85,7 @@ if (phoneInput){
             }
         });
     var emailMask = IMask(
-        document.getElementById('email-mask'),
+        document.getElementById('email'),
         {
             mask: /^\S*@?\S*$/
         });

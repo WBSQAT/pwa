@@ -49,16 +49,21 @@
         >
       </div>
       <div class="d-flex justify-content-center align-items-center">
-        <form class="row g-3" style="width: 60%">
-          <input class="input-name" placeholder="Nombre" maxlength="50" />
-          <input class="input-surname" placeholder="Apellido" maxlength="50" />
+        <form name="userForm" class="row g-3" style="width: 60%">
+          <input id="name" class="name" placeholder="Nombre" maxlength="50" />
           <input
-            id="birthdate-mask"
-            class="input-birthdate"
+            id="surname"
+            class="surname"
+            placeholder="Apellido"
+            maxlength="50"
+          />
+          <input
+            id="birthday"
+            class="input-birthday"
             placeholder="Fecha de Nacimiento"
           />
-          <input id="email-mask" class="input-email" placeholder="Email" />
-          <input id="phone-mask" class="input-phone" placeholder="Celular" />
+          <input id="email" class="input-email" placeholder="Email" />
+          <input id="phone" class="input-phone" placeholder="Celular" />
           <input
             id="currency-mask"
             class="input-currency"
