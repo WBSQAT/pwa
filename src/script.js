@@ -1,11 +1,4 @@
-// import IMask from './node_modules/imask';
-
-// var element = document.getElementById('phone');
-// var maskOptions = {
-//   mask: '+{54}(011)0000-0000'
-// };
-// var mask = IMask(element, maskOptions);
-
+import './mask.js';
 import initializeFacebook, { login as loginFB } from './authFacebook.js';
 import initializeGoogle, { login as LoginG } from './authGoogle.js';
 
