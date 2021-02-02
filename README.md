@@ -6,8 +6,6 @@ _Actividad interna en el que se pondrán en práctica conceptos de PWA con JavaS
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
 ### Pre-requisitos 📋
 
 - [NodeJS](https://nodejs.org/es/) - Entorno de ejecucion de Javascript
@@ -21,16 +19,16 @@ _Instalar dependencias del proyecto_
 npm install
 ```
 
-_Para correr de forma local (localhost:8080) el proyecto instalar: npm install --global http-server (Doc: https://www.npmjs.com/package/http-server)_
+_Para correr de forma local_
 
 ```
-npm install --global http-server
+npm run start
 ```
 
-_Comando para iniciar proyecto_
+## Despliegue 📦
 
 ```
-http-server -o
+npm run build
 ```
 
 ## Errores de entorno conocidos ⚙️

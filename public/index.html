@@ -49,15 +49,12 @@
     />
     <script src="https://apis.google.com/js/api.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script type="module" src="authGoogle.js"></script>
-    <script type="module" src="authFacebook.js"></script>
-    <script type="module" src="script.js"></script>
+    <script defer src="bundle.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="manifest" href="manifest.json" />
 
     <title>Login Page</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--Bootsrap 4 CDN-->
     <link
@@ -82,20 +79,6 @@
     />
   </head>
   <body>
-    <script>
-      $(document).ready(function () {
-        $("#gAuth").hover(function () {
-          $(this).addClass("animate__animated animate__wobble");
-        });
-        $("#fAuth").hover(function () {
-          $(this).addClass("animate__animated animate__wobble");
-        });
-        $("#tAuth").hover(function () {
-          $(this).addClass("animate__animated animate__wobble");
-        });
-      });
-    </script>
-
     <div class="container animate__animated animate__zoomInDown">
       <div class="d-flex justify-content-center h-100">
         <div class="card">
