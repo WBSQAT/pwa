@@ -21,3 +21,9 @@ body {
 .card-header h3 h1 small {
   color: white;
 }
+
+.save_btn {
+  color: black;
+  background-color: #ffc312;
+  width: 100px;
+}
