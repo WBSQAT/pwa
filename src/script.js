@@ -3,6 +3,9 @@ import initializeFacebook, { login as loginFB } from './authFacebook.js';
 import initializeGoogle, { login as LoginG } from './authGoogle.js';
 import './formDataUser.js';
 
+if (navigator.serviceWorker)
+    navigator.serviceWorker.register('/sw.js');
+
 const fauth = document.getElementById('fAuth');
 const gauth = document.getElementById('gAuth');
 const tauth = document.getElementById('tAuth');
