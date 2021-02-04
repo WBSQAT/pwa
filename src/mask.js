@@ -8,7 +8,7 @@ const phoneInput = document.getElementById('phone');
 if (phoneInput){
     var phoneMask = IMask(
         document.getElementById('phone'), {
-        mask: '+{54} (011) 0000-0000'
+        mask: '+{00} (000) 0000-0000'
         });
     
     var momentFormat = moment.localeData(navigator.language).longDateFormat('L'); 
@@ -76,7 +76,7 @@ if (phoneInput){
     var currencyMask = IMask(
         document.getElementById('currency-mask'),
         {
-            mask: '$num {\\00}',
+            mask: '$num',
             blocks: {
             num: {
                 mask: Number,
