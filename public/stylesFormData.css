@@ -2,15 +2,21 @@
 html,
 body {
   background-image: url("https://wallpaperaccess.com/full/1426870.png");
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   font-family: "Numans", sans-serif;
 }
+
 .container {
   height: 100%;
   align-content: center;
+  width: 50%;
+  display: block;
 }
+
 .card {
   height: 100%;
   margin-top: auto;
@@ -18,7 +24,27 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
-.card-header h3 h1 small {
+
+.card-header div h1 {
+  color: white;
+}
+
+.card-header small {
+  margin-bottom: 50px;
+}
+
+.card-header small {
+  margin-bottom: 50px;
+}
+.card-header small p {
+  color: white;
+}
+
+form {
+  width: 60%;
+}
+
+.form-switch label {
   color: white;
 }
 
