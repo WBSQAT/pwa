@@ -80,7 +80,9 @@ if (phoneInput){
             blocks: {
             num: {
                 mask: Number,
-                thousandsSeparator: '.'
+                thousandsSeparator: '.',
+                signed: false,
+                max: 999999999999999
             }
             }
         });

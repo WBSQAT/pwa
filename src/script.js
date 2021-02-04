@@ -6,21 +6,22 @@ import './formDataUser.js';
 if (navigator.serviceWorker)
     navigator.serviceWorker.register('/sw.js');
 
-const fauth = document.getElementById('fAuth');
-const gauth = document.getElementById('gAuth');
-const tauth = document.getElementById('tAuth');
-const addHoverEffect = (elemento) => {
-    if (elemento?.onmouseover)
-        elemento.onmouseover = () => elemento.classList.add("animate__animated", "animate__wobble");
-    if (elemento?.onmouseout)
-        elemento.onmouseout = () => elemento.classList.remove("animate__animated", "animate__wobble");
-}
+if (document.getElementById('index')){
+    const fauth = document.getElementById('fAuth');
+    const gauth = document.getElementById('gAuth');
+    const tauth = document.getElementById('tAuth');
 
-addHoverEffect(fauth);
-addHoverEffect(gauth);
-addHoverEffect(tauth);
+    const addHoverEffect = (elemento) => {
+        if (elemento?.onmouseover)
+            elemento.onmouseover = () => elemento.classList.add("animate__animated", "animate__wobble");
+        if (elemento?.onmouseout)
+            elemento.onmouseout = () => elemento.classList.remove("animate__animated", "animate__wobble");
+    }
 
-if (fauth) {
+    addHoverEffect(fauth);
+    addHoverEffect(gauth);
+    addHoverEffect(tauth);
+
     initializeFacebook('2605083403115042');
     fauth.onclick = () => loginFB(
         (user) => {
@@ -42,9 +43,7 @@ if (fauth) {
             confirmButtonText: 'OK'
         })
     );
-}
 
-if (gauth) {
     initializeGoogle("791551942698-8g31qv76mpfkm3ifce2qu0jb20ghr834.apps.googleusercontent.com", "AIzaSyCI7dtel6JRXCWKBdXNEuxkStEr8EYaO6k");
     gauth.onclick = () => LoginG(
         (user) => {
@@ -65,4 +64,4 @@ if (gauth) {
             icon: 'error',
             confirmButtonText: 'OK'
         }));
-}
+    }
