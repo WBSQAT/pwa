@@ -8,7 +8,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Pre-requisitos 📋
 
-- [NodeJS](https://nodejs.org/es/) - Entorno de ejecucion de Javascript
+- [NodeJS](https://nodejs.org/es/) - Entorno de ejecución de Javascript
 - [VSCode](https://code.visualstudio.com/) - IDE preferible para el desarrollo
 
 ### Instalación 🔧
@@ -35,9 +35,9 @@ npm run build
 
 _Ya que la app no se encuentra oficialmente publicada, debemos utilizar cuentas administrativas o test._
 
-# Facebook
+### Facebook
 
-[Consola](https://console.developers.google.com/apis/credentials?hl=ES&project=taller-qat-pwa) - Pedir permisos con idFB o username en "Roles > Roles > Agregar Adminiestradores".
+[Consola](https://developers.facebook.com/apps/222157936246398/dashboard/) - Pedir permisos con idFB o username en "Roles > Roles > Agregar Administradores".
 
 | Usuario                         | Contraseña |
 | ------------------------------- | ---------- |
@@ -46,15 +46,15 @@ _Ya que la app no se encuentra oficialmente publicada, debemos utilizar cuentas 
 | ghhajtiqep_1611350246@tfbnw.net | Tester     |
 | mlblrehksd_1611350246@tfbnw.net | Tester     |
 
-# Google
+### Google
 
-[Consola](https://developers.facebook.com/apps/222157936246398/dashboard/) - Pedir permisos a administradores con cuenta de google. Adminiestrador debera entrar a [IAM-Admin](https://console.developers.google.com/iam-admin/iam?hl=ES&project=taller-qat-pwa) en ingresar cuenta en "añadir" o como usuario test en[Pantalla de consetimineto de OAuth](https://console.developers.google.com/apis/credentials/consent?hl=ES&project=taller-qat-pwa) con la opcion "add users".
+[Consola](https://console.developers.google.com/apis/credentials?hl=ES&project=taller-qat-pwa) - Pedir permisos a administradores con cuenta de google. Administrador deberá entrar a [IAM-Admin](https://console.developers.google.com/iam-admin/iam?hl=ES&project=taller-qat-pwa) en ingresar cuenta en "añadir" o como usuario test en [Pantalla de consentimiento de OAuth](https://console.developers.google.com/apis/credentials/consent?hl=ES&project=taller-qat-pwa) con la opción "add users".
 
 ## Errores de entorno conocidos ⚙️
 
-### "la ejecucion de scripts está deshabilitada en este sistema"
+### "la ejecución de scripts está deshabilitada en este sistema"
 
-_Click en boton inicio de windows, escribír:_
+_Click en botón inicio de windows, escribir:_
 
 ```
 powershell
