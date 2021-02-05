@@ -8,7 +8,8 @@ module.exports = {
     contentBase: path.join(__dirname, "public"),
     watchContentBase: true,
     hot: true,
-    port: 8081
+    port: 8081,
+    open: true
   },
   output: {
     filename: "bundle.js",

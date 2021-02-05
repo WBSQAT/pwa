@@ -31,6 +31,19 @@ npm run start
 npm run build
 ```
 
+## Usuarios Test 🖇️
+
+Ya que la app no se encuentra oficialmente publicada, debemos utilizar cuentas administrativas o test
+
+# Facebook
+
+| Usuario                         | Contraseña |
+| ------------------------------- | ---------- |
+| ploungfgyy_1611350246@tfbnw.net | Tester     |
+| oopyastakg_1611350246@tfbnw.net | Tester     |
+| ghhajtiqep_1611350246@tfbnw.net | Tester     |
+| mlblrehksd_1611350246@tfbnw.net | Tester     |
+
 ## Errores de entorno conocidos ⚙️
 
 ### "la ejecucion de scripts está deshabilitada en este sistema"
