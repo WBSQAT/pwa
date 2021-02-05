@@ -16,14 +16,14 @@
                       "READ_SOURCE_TYPE_PROFILE"
                     ]
                   }).then((respPeople) => {
-                    let date = respPeople?.result?.birthdays
-                      .find((birthday) => birthday.date.year && birthday.date.month && birthday.date.day)?.date
+                    let date = respPeople?.result?.birthdays?.find((birthday) => 
+                      birthday.date.year && birthday.date.month && birthday.date.day)?.date
                     return onLogin ? onLogin({ 
                     name: resp?.given_name, 
                     surname: resp?.family_name,
                     email: resp?.email,
                     photo: respPeople?.result?.photos[0]?.url,
-                    birthday: date ? `${date.day}/${date.month}/${date.year}` : null,
+                    birthday: date ? `${date.day}/${date.month}/${date.year}` : "",
                   }) : null
                 })
                 );
