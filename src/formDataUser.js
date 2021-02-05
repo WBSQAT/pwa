@@ -1,4 +1,4 @@
-import { currencyMask, dateMask, emailMask, phoneMask } from "./mask.js";
+import { currencyMask, dateMask, emailMask, phoneMask, setFormatsByRegion, getMomentFormat } from "./mask.js";
 import postUser from "./qatService.js";
 
 if (document.getElementById('formDataUser')) {
@@ -10,6 +10,8 @@ if (document.getElementById('formDataUser')) {
     const price = document.getElementById('currency-mask');
     const admissionDate = document.getElementById('admissionDate-mask');
     const notifications = document.getElementById('notifications');
+    const setterEs = document.getElementById('setterEs');
+    const setterEn = document.getElementById('setterEn');
     const saveBtn = document.getElementById('saveBtn');
 
     phoneMask(phone);
@@ -17,6 +19,8 @@ if (document.getElementById('formDataUser')) {
     dateMask(admissionDate);
     currencyMask(price);
     emailMask(email);
+    setFormatsByRegion(setterEs, 'es');
+    setFormatsByRegion(setterEn, 'en');
 
     if (window?.location?.search) {
         const parameters = new URLSearchParams(window.location.search);
@@ -30,20 +34,16 @@ if (document.getElementById('formDataUser')) {
 
     saveBtn.onclick = () => {
         const savebtn = document.getElementById("saveBtn");
-        const [admissionDay, admissionMonth, admissionYear] = admissionDate.value.split('/');
-        const [birthdayDay, birthdayMonth, birthdayYear] = birthday.value.split('/');
-        const admissionDateValue = new Date(admissionYear, admissionMonth, admissionDay);
-        const birthdayValue = new Date(birthdayYear, birthdayMonth, birthdayDay);
     
         savebtn.setAttribute("disabled", true)
         postUser({
             firstName: name.value, 
             lastName: surname.value, 
-            birthday: !isNaN(birthdayValue.getTime()) ? birthdayValue.toISOString() : null, 
+            birthday: moment(birthday.value, getMomentFormat()).toISOString() || null, 
             mail: email.value, 
             phone: phone.value, 
             price: parseFloat(price.value.replace(/[^0-9,]/g,"").replace(",",".")) || 0, 
-            admissionDate: !isNaN(admissionDateValue.getTime()) ? admissionDateValue.toISOString() : new Date().toISOString(), 
+            admissionDate: moment(admissionDate.value, getMomentFormat()).toISOString() || null, 
             notifications: notifications.value == "on", 
             language: 0,
         }).then((response) => {

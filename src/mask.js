@@ -1,6 +1,14 @@
 
 import IMask from 'imask';
 
+let inputsDate = [];
+let inputscurrency = [];
+let momentFormat = '';
+
+export function getMomentFormat() {
+    return momentFormat ?? moment.localeData(navigator.language).longDateFormat('L');
+}
+
 export function phoneMask(phoneInput) {
     return IMask(
         phoneInput, {
@@ -9,9 +17,8 @@ export function phoneMask(phoneInput) {
 }
 
 export function dateMask(dateInput){
-    var momentFormat = moment.localeData(navigator.language).longDateFormat('L'); 
-
-    return IMask(
+    momentFormat = moment.localeData(navigator.language).longDateFormat('L'); 
+    dateInput = IMask(
         dateInput,
         {
             mask: Date,
@@ -27,7 +34,7 @@ export function dateMask(dateInput){
                 YYYY: {
                     mask: IMask.MaskedRange,
                     from: 1900,
-                    to: 2020
+                    to: new Date().getFullYear()
                 },
                 MM: {
                     mask: IMask.MaskedRange,
@@ -41,22 +48,26 @@ export function dateMask(dateInput){
                 }
             }
         });
+    inputsDate.push(dateInput);
+    return dateInput;
 }
 
 export function currencyMask(currencyInput){
-    return IMask(
+    currencyInput = IMask(
         currencyInput,
         {
-            mask: '$num',
+            mask: `${navigator.language === 'en' ? '$USD' : '$'} num`,
             blocks: {
-            num: {
-                mask: Number,
-                thousandsSeparator: '.',
-                signed: false,
-                max: 999999999999999
-            }
+                num: {
+                    mask: Number,
+                    thousandsSeparator: '.',
+                    signed: false,
+                    max: 999999999999999
+                }
             }
         });
+    inputscurrency.push(currencyInput)
+    return currencyInput;
 }
 
 export function emailMask(emailInput){
@@ -65,4 +76,56 @@ export function emailMask(emailInput){
         {
             mask: /^\S*@?\S*$/
         });
+}
+
+export function setFormatsByRegion(control, region) {
+    control.onclick = () => {
+        momentFormat = moment.localeData(region).longDateFormat('L'); 
+        
+        inputsDate.forEach(input => {
+            input.value = '';
+            input.updateOptions({
+                mask: Date,
+                pattern: momentFormat,
+                lazy: false,
+                format: function (date) {
+                return moment(date).format(momentFormat);
+                },
+                parse: function (str) {
+                return moment(str, momentFormat);
+                },
+                blocks: {
+                    YYYY: {
+                        mask: IMask.MaskedRange,
+                        from: 1900,
+                        to: 2020
+                    },
+                    MM: {
+                        mask: IMask.MaskedRange,
+                        from: 1,
+                        to: 12
+                    },
+                    DD: {
+                        mask: IMask.MaskedRange,
+                        from: 1,
+                        to: 31
+                    }
+                }
+            });
+        });
+
+        inputscurrency.forEach((input) => input.updateOptions(
+            {
+                mask: `${region === 'en' ? '$USD' : '$'} num`,
+                blocks: {
+                    num: {
+                        mask: Number,
+                        thousandsSeparator: '.',
+                        signed: false,
+                        max: 999999999999999
+                    }
+                }
+            }
+        ))
+    }
 }
