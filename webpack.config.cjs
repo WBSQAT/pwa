@@ -1,5 +1,4 @@
 const path = require("path");
-// const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -7,8 +6,9 @@ module.exports = {
   entry: "./src/script.js",
   devServer: {
     contentBase: path.join(__dirname, "public"),
-    watchContentBase: true, //if nothing to update looping message comment this!
+    watchContentBase: true,
     hot: true,
+    port: 8081
   },
   output: {
     filename: "bundle.js",
@@ -20,10 +20,5 @@ module.exports = {
       filename: "index.html",
       template: "./public/index.html",
     }),
-    // // Provides jQuery for other JS bundled with Webpack
-    // new webpack.ProvidePlugin({
-    //   $: "jquery",
-    //   jQuery: "jquery",
-    // }),
   ],
 };

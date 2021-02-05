@@ -1,3 +1,4 @@
+import { currencyMask, dateMask, emailMask, phoneMask } from "./mask.js";
 import postUser from "./qatService.js";
 
 if (document.getElementById('formDataUser')) {
@@ -11,6 +12,12 @@ if (document.getElementById('formDataUser')) {
     const notifications = document.getElementById('notifications');
     const saveBtn = document.getElementById('saveBtn');
 
+    phoneMask(phone);
+    dateMask(birthday);
+    dateMask(admissionDate);
+    currencyMask(price);
+    emailMask(email);
+
     if (window?.location?.search) {
         const parameters = new URLSearchParams(window.location.search);
         let inputs = document.forms["userForm"].getElementsByTagName("input");
@@ -22,11 +29,13 @@ if (document.getElementById('formDataUser')) {
     }
 
     saveBtn.onclick = () => {
+        const savebtn = document.getElementById("saveBtn");
         const [admissionDay, admissionMonth, admissionYear] = admissionDate.value.split('/');
         const [birthdayDay, birthdayMonth, birthdayYear] = birthday.value.split('/');
         const admissionDateValue = new Date(admissionYear, admissionMonth, admissionDay);
         const birthdayValue = new Date(birthdayYear, birthdayMonth, birthdayDay);
     
+        savebtn.setAttribute("disabled", true)
         postUser({
             firstName: name.value, 
             lastName: surname.value, 
@@ -38,6 +47,7 @@ if (document.getElementById('formDataUser')) {
             notifications: notifications.value == "on", 
             language: 0,
         }).then((response) => {
+            savebtn.removeAttribute("disabled", true);
             Swal.fire({
                 title: response.ok ? 'Bienvenido!' : 'Error',
                 text:  response.ok ? 'Autorizado' : 'No autorizado',

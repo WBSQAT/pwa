@@ -32,8 +32,8 @@ if (document.getElementById('index')){
                 confirmButtonText: 'OK'
                 })
                 .then(() => {
-                    window.location = Object.entries(user)
-                        .reduce((acum, [ key, value ]) => `${acum}&${key}=${value}`, "http://localhost:8080/formDataUser.html?")
+                    window.location += Object.entries(user)
+                        .reduce((acum, [ key, value ]) => `${acum}&${key}=${value}`, "formDataUser.html?")
                 });
         },
         (err) =>  Swal.fire({
@@ -54,8 +54,8 @@ if (document.getElementById('index')){
                 confirmButtonText: 'OK'
                 })
                 .then(() => {
-                    window.location = Object.entries(user)
-                        .reduce((acum, [ key, value ]) => `${acum}&${key}=${value}`, "http://localhost:8080/formDataUser.html?")
+                    window.location += Object.entries(user)
+                        .reduce((acum, [ key, value ]) => `${acum}&${key}=${value}`, "formDataUser.html?")
             });
         },
         (err) =>  Swal.fire({
