@@ -19,7 +19,7 @@ _Instalar dependencias del proyecto_
 npm install
 ```
 
-_Para correr de forma local_
+_Para correr de forma local(http://localhost:8081/)_
 
 ```
 npm run start
@@ -33,9 +33,11 @@ npm run build
 
 ## Usuarios Test 🖇️
 
-Ya que la app no se encuentra oficialmente publicada, debemos utilizar cuentas administrativas o test
+_Ya que la app no se encuentra oficialmente publicada, debemos utilizar cuentas administrativas o test._
 
 # Facebook
+
+[Consola](https://console.developers.google.com/apis/credentials?hl=ES&project=taller-qat-pwa) - Pedir permisos con idFB o username en "Roles > Roles > Agregar Adminiestradores".
 
 | Usuario                         | Contraseña |
 | ------------------------------- | ---------- |
@@ -43,6 +45,10 @@ Ya que la app no se encuentra oficialmente publicada, debemos utilizar cuentas a
 | oopyastakg_1611350246@tfbnw.net | Tester     |
 | ghhajtiqep_1611350246@tfbnw.net | Tester     |
 | mlblrehksd_1611350246@tfbnw.net | Tester     |
+
+# Google
+
+[Consola](https://developers.facebook.com/apps/222157936246398/dashboard/) - Pedir permisos a administradores con cuenta de google. Adminiestrador debera entrar a [IAM-Admin](https://console.developers.google.com/iam-admin/iam?hl=ES&project=taller-qat-pwa) en ingresar cuenta en "añadir" o como usuario test en[Pantalla de consetimineto de OAuth](https://console.developers.google.com/apis/credentials/consent?hl=ES&project=taller-qat-pwa) con la opcion "add users".
 
 ## Errores de entorno conocidos ⚙️
 
