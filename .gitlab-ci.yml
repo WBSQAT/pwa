@@ -1,7 +1,13 @@
-image: node:14.15.4
+image: alpine:latest
 
 pages:
   stage: deploy
   script:
-- echo 'Nothing to do...'
+  - echo 'Nothing to do...'
+  artifacts:
+    paths:
+    - public
+    expire_in: 1 day
+  only:
+  - master
 
