@@ -7,11 +7,12 @@ pages:
   - cd node_modules/
   - npm install
   
-   tags:
-    - .net
+
 
   artifacts:
     paths:
     - public
+       tags:
+    - .net
   only:
   - feature-gitpages
