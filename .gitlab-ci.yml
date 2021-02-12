@@ -4,12 +4,13 @@ pages:
   stage: deploy
   script:
   - echo 'Nothing to do...'
+      tags:
+    - .net
   artifacts:
     paths:
     - public
     expire_in: 1 day
-    tags:
-    - .net
+
   only:
   - feature-gitpages
 
