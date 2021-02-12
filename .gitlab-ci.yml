@@ -1,11 +1,7 @@
 pages:
   stage: deploy
   script:
-  - 'mkdir .public'
-  - 'cp -r * .public'
-  - 'mv .public public'
-  - 'cd node_modules/'
-  - 'npm install'
+- echo 'Nothing to do...'
   
          tags:
     - .net
