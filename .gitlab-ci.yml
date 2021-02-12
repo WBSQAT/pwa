@@ -2,9 +2,12 @@ image: alpine:latest
 
 pages:
   stage: deploy
-  script:
-  - 'echo 'Nothing to do...'''
-      tags:
+ script:
+    - 'cd ArquetipoXamarin'
+    - 'dotnet build ./ArquetipoXamarin.sln /nodereuse:false'
+    - 'rd  /s /q .'
+
+  tags:
     - .net
   artifacts:
     paths:
