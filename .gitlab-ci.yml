@@ -6,6 +6,9 @@ pages:
   - mkdir .public
   - cp -r * .public
   - mv .public public
+  tags:
+    - .net
+
   artifacts:
     paths:
     - public
