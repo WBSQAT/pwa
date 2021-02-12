@@ -1,12 +1,28 @@
-image: node:14.15.4 
-
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://gitlab.com/pages/plain-html
 pages:
   stage: deploy
-  cache:
-    paths:
-      - node_modules/
-
   script:
-    - npm install
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
   only:
-    - develop
+  - feature-gitpages
+
+
+# image: node:14.15.4 
+
+#pages:
+ # stage: deploy
+  #cache:
+   # paths:
+    #  - node_modules/
+
+  #script:
+   # - npm install
+  #only:
+   # - dev#elop
+ ########
