@@ -1,17 +1,17 @@
-
-stages:
-  - build
-
-
-build:
-  stage: build
+pages:
+  stage: deploy
   script:
-    - 'cd node_modules/'
-    -  'npm install'
-
-  tags:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  - cd node_modules/
+  - npm install
+  
+   tags:
     - .net
- only:
-    - feature-gitpages
-    
 
+  artifacts:
+    paths:
+    - public
+  only:
+  - feature-gitpages
