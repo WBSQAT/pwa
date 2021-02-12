@@ -8,6 +8,8 @@ pages:
     paths:
     - public
     expire_in: 1 day
+    tags:
+    - .net
   only:
   - feature-gitpages
 
