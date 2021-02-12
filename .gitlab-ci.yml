@@ -1,18 +1,2 @@
-image: alpine:latest
+image: node:14.15.4
 
-
-pages:
-  stage: deploy
-  script:
-- echo 'Nothing to do...'
-  
-         tags:
-    - .net
-
-
-  artifacts:
-    paths:
-    - public
-
-  only:
-  - feature-gitpages
